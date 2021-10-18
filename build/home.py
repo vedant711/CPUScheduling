@@ -10,6 +10,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Label, Tk, Canvas, Entry, Text, Button, PhotoImage
 from tkinter.constants import ANCHOR
+import webbrowser
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -19,13 +20,17 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+
+def callback(url):
+    webbrowser.open_new_tab(url)
+
+
 def one():
     file1 = "python cpuScheduling.py"
     # os.system(file1)
-    p = subprocess.Popen(file1, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p = subprocess.Popen(file1, shell=True, stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = p.communicate()
-
-
 
 
 window = Tk()
@@ -213,7 +218,7 @@ button_gh = Button(
     image=button_image_gh,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button github clicked"),
+    command=lambda: callback("https://github.com/vedant711/CPUScheduling"),
     relief="flat"
 )
 button_gh.place(

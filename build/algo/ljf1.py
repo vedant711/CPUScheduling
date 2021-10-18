@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def sjf(p, at, bt):
+def ljf(p, at, bt):
     n = len(p)
     ct = [0] * n
     wt = [0] * n
@@ -24,6 +24,7 @@ def sjf(p, at, bt):
         at1[i] = at[i]
 
     bt1.sort()
+    bt1.reverse()
     for i in range(0, n):
         x = bt.index(bt1[i])
         at1[i] = at[x]
@@ -97,3 +98,9 @@ def sjf(p, at, bt):
     print(avgwt)
 
     plt.show()
+
+
+p = [1, 2, 3, 4, 5]
+at = [2, 3, 4, 5, 6]
+bt = [3, 2, 4, 5, 6]
+ljf(p, at, bt)

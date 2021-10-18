@@ -37,19 +37,30 @@ def second():
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = p.communicate()
 
-def third():                #function to hrrn desktop
+
+def third():  # function to hrrn desktop
     file1 = "python hrrn.py"
     # os.system(file1)
     p = subprocess.Popen(file1, shell=True, stdin=subprocess.PIPE,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = p.communicate()
 
-def fourth():                #function to hrrn desktop
-    file1 = "python rrs.py"
+
+def fourth():  # function to hrrn desktop
+    file1 = "python rr.py"
     # os.system(file1)
     p = subprocess.Popen(file1, shell=True, stdin=subprocess.PIPE,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = p.communicate()
+
+
+def fifth():
+    file1 = "python ljf.py"
+    # os.system(file1)
+    p = subprocess.Popen(file1, shell=True, stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = p.communicate()
+
 
 window = Tk()
 
@@ -101,7 +112,8 @@ button_10.place(
     height=48.0
 )
 
-canvas.create_rectangle( #line
+
+canvas.create_rectangle(  # line
     408.0,
     253.0,
     410.24524092674255,
@@ -109,8 +121,8 @@ canvas.create_rectangle( #line
     fill="#00071D",
     outline="")
 
-cpuImage = PhotoImage(file=relative_to_assets("CPUU-01.png")) #CPU image
-canvas.create_image(16, 284, anchor= 'nw' , image = cpuImage)
+cpuImage = PhotoImage(file=relative_to_assets("CPUU-01.png"))  # CPU image
+canvas.create_image(16, 284, anchor='nw', image=cpuImage)
 
 """
 canvas.create_rectangle(
@@ -197,12 +209,12 @@ button_13 = Button(
 )
 button_13.place(
     x=455.0,
-    y=337.0,
+    y=341.0,
     width=288.0,
     height=38.0
 )
 
-button_image_15 = PhotoImage(               #HRRN button
+button_image_15 = PhotoImage(  # HRRN button
     file=relative_to_assets("button_15.png"))
 button_15 = Button(
     image=button_image_15,
@@ -213,12 +225,12 @@ button_15 = Button(
 )
 button_15.place(
     x=455.0,
-    y=395.0,
+    y=401.0,
     width=288.0,
     height=38.0
 )
 
-button_image_16 = PhotoImage(            
+button_image_16 = PhotoImage(
     file=relative_to_assets("Button.png"))
 button_16 = Button(
     image=button_image_16,
@@ -229,7 +241,23 @@ button_16 = Button(
 )
 button_16.place(
     x=455.0,
-    y=451.0,
+    y=461.0,
+    width=288.0,
+    height=38.0
+)
+
+button_image_17 = PhotoImage(                 #LJF Button
+    file=relative_to_assets("button_16.png"))
+button_17 = Button(
+    image=button_image_17,
+    borderwidth=0,
+    highlightthickness=0,
+    command=fifth,
+    relief="flat"
+)
+button_17.place(
+    x=455.0,
+    y=521.0,
     width=288.0,
     height=38.0
 )
