@@ -45,6 +45,10 @@ def three():
     stdout, stderr = p.communicate()
 
 
+def readme(path):
+    subprocess.Popen([path], shell=True)
+
+
 window = Tk()
 
 window.geometry("800x596")
@@ -246,7 +250,7 @@ button_rm = Button(
     image=button_image_rm,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button readme clicked"),
+    command=readme('readme.pdf'),
     relief="flat"
 )
 button_rm.place(
