@@ -1,6 +1,7 @@
 from math import sin, cos
 import subprocess
 from pathlib import Path
+import os
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
@@ -45,8 +46,12 @@ def three():
     stdout, stderr = p.communicate()
 
 
-def readme(path):
-    subprocess.Popen([path], shell=True)
+def readme(p):
+    # path = '/readme.pdf'
+    # subprocess.Popen([path], shell=True)
+    path_parent = os.path.dirname(os.getcwd())
+    os.chdir(path_parent)
+    os.system(p)
 
 
 window = Tk()
@@ -250,7 +255,7 @@ button_rm = Button(
     image=button_image_rm,
     borderwidth=0,
     highlightthickness=0,
-    command=readme('readme.pdf'),
+    command=lambda: readme('readme.pdf'),
     relief="flat"
 )
 button_rm.place(
