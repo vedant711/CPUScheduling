@@ -191,7 +191,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=two,
+    command=lambda: two(),
     relief="flat"
 )
 button_2.place(
@@ -207,7 +207,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=0,
     highlightthickness=0,
-    command=three,
+    command=lambda: three(),
     relief="flat"
 )
 button_3.place(
