@@ -223,7 +223,7 @@ button_yt = Button(
     image=button_image_yt,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button youtube clicked"),
+    command=lambda: callback('https://youtu.be/-fI59snCfAs'),
     relief="flat"
 )
 button_yt.place(
